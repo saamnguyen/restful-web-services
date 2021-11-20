@@ -1,15 +1,18 @@
 package com.spring.restfulwebservices.filtering;
 
+import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-@JsonIgnoreProperties({"name", "phone"})
+//@JsonIgnoreProperties({"name", "phone"}) //loc khong dong
+@JsonFilter("SomeBeanFilter") //loc dong
 public class SomeBean {
     private String name;
     private String phone;
 
     //@JsonIgnore
     private String salary;
+
 
     public SomeBean(String name, String phone, String salary) {
         super();
