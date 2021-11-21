@@ -1,11 +1,24 @@
 package com.spring.restfulwebservices.user;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.Date;
 
+@Entity
 public class User {
+
+    @Id
+    @GeneratedValue
     private Integer id;
     private String name;
+
     private Date dob;
+
+    protected User()
+    {
+
+    }
 
     public User(Integer id, String name, Date dob) {
         super();
