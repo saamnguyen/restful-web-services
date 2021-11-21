@@ -3,7 +3,9 @@ package com.spring.restfulwebservices.user;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class User {
@@ -14,6 +16,17 @@ public class User {
     private String name;
 
     private Date dob;
+
+    public List<Post> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(List<Post> posts) {
+        this.posts = posts;
+    }
+
+    @OneToMany(mappedBy = "user")
+    private List<Post> posts;
 
     protected User()
     {
