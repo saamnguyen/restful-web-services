@@ -35,7 +35,8 @@ public class UserController {
 
     @PostMapping("/users")
     public void createUser(@RequestBody User user){
-        User sevedUser = userDaoService.save(user);
+//        User sevedUser = userDaoService.save(user);
+        userDaoService.save(user);
     }
 
     @DeleteMapping("/users/{id}")
